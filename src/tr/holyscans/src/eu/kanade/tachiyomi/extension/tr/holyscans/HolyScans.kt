@@ -1,8 +1,16 @@
-package eu.kanade.tachiyomi.extension.tr.holyscans
+package eu.kanade.tachiyomi.extension.tr.kabusmanga
 
 import eu.kanade.tachiyomi.multisrc.madara.Madara
+import java.text.SimpleDateFormat
+import java.util.Locale
 
-class HolyScans : Madara("Holy Scans", "https://holyscans.com.tr", "tr") {
+class HolyScan :
+    Madara(
+        "Holy Scan",
+        "https://holyscans.com.tr/",
+        "tr",
+        dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.ROOT),
+    ) {
     override val useLoadMoreRequest = LoadMoreStrategy.Never
     override val useNewChapterEndpoint = true
 }
